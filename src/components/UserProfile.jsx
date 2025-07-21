@@ -6,33 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface UserProfileProps {
-  user: {
-    name: string;
-    username: string;
-    avatar: string;
-    bio: string;
-    location: string;
-    website: string;
-    joinedDate: string;
-    isFollowing?: boolean;
-  };
-  stats: {
-    posts: number;
-    followers: number;
-    following: number;
-    likes: number;
-  };
-  skills: string[];
-  achievements: Array<{
-    title: string;
-    description: string;
-    icon: string;
-    date: string;
-  }>;
-}
-
-export function UserProfile({ user, stats, skills, achievements }: UserProfileProps) {
+export function UserProfile({ user, stats, skills, achievements }) {
   const [isFollowing, setIsFollowing] = useState(user.isFollowing || false);
   const [currentTab, setCurrentTab] = useState("posts");
 

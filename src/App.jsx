@@ -27,7 +27,6 @@ const App = () => (
             <Route path="/liked" element={<div className="p-6 text-center"><h1 className="text-2xl font-bold">Liked Posts Coming Soon</h1></div>} />
             <Route path="/saved" element={<div className="p-6 text-center"><h1 className="text-2xl font-bold">Saved Posts Coming Soon</h1></div>} />
             <Route path="/settings" element={<div className="p-6 text-center"><h1 className="text-2xl font-bold">Settings Coming Soon</h1></div>} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

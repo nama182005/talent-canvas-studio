@@ -11,30 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
-interface PostCardProps {
-  id: string;
-  user: {
-    name: string;
-    username: string;
-    avatar: string;
-    isFollowing?: boolean;
-  };
-  content: {
-    title: string;
-    description: string;
-    image: string;
-    tags: string[];
-    skillCategory: string;
-  };
-  stats: {
-    likes: number;
-    comments: number;
-    shares: number;
-  };
-  timeAgo: string;
-}
-
-export function PostCard({ user, content, stats, timeAgo }: PostCardProps) {
+export function PostCard({ user, content, stats, timeAgo }) {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [isFollowing, setIsFollowing] = useState(user.isFollowing || false);
@@ -49,7 +26,7 @@ export function PostCard({ user, content, stats, timeAgo }: PostCardProps) {
     setIsFollowing(!isFollowing);
   };
 
-  const getCategoryColor = (category: string) => {
+  const getCategoryColor = (category) => {
     const colors = {
       art: "bg-peach text-peach-foreground",
       music: "bg-lavender text-lavender-foreground",
@@ -58,7 +35,7 @@ export function PostCard({ user, content, stats, timeAgo }: PostCardProps) {
       writing: "bg-secondary text-secondary-foreground",
       photography: "bg-accent text-accent-foreground",
     };
-    return colors[category.toLowerCase() as keyof typeof colors] || "bg-muted text-muted-foreground";
+    return colors[category.toLowerCase()] || "bg-muted text-muted-foreground";
   };
 
   return (

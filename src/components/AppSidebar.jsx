@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   Home,
   Compass,
@@ -41,7 +41,6 @@ const personalItems = [
 
 export function AppSidebar() {
   const { state } = useSidebar();
-  const location = useLocation();
   const [isDark, setIsDark] = useState(false);
   const isCollapsed = state === "collapsed";
 
@@ -50,7 +49,7 @@ export function AppSidebar() {
     document.documentElement.classList.toggle("dark");
   };
 
-  const getNavClassName = (isActive: boolean) =>
+  const getNavClassName = (isActive) =>
     `w-full justify-start transition-all duration-200 ${
       isActive
         ? "bg-gradient-primary text-primary-foreground shadow-soft"

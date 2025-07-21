@@ -16,16 +16,10 @@ const skillCategories = [
   { name: "Fitness", color: "bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200" },
 ];
 
-interface SkillFilterProps {
-  onFilterChange: (category: string) => void;
-  onSearchChange: (query: string) => void;
-  activeFilter: string;
-}
-
-export function SkillFilter({ onFilterChange, onSearchChange, activeFilter }: SkillFilterProps) {
+export function SkillFilter({ onFilterChange, onSearchChange, activeFilter }) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
     onSearchChange(query);
